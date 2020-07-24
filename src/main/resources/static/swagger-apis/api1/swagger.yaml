@@ -36,7 +36,7 @@ paths:
         description: "Process Date"
         required: true
         type: "string"        
-  /invoice/filterByCustomerIdAndProcessDate:
+  /invoice/filter:
     get:
       tags:
         - "invoice"
@@ -57,52 +57,6 @@ paths:
       - name: "processDate"
         in: "query"
         description: "Process Date"
-        required: true
-        type: "string" 
-  /invoice/filterByCustomerIdAndProcessYearMonth:
-    get:
-      tags:
-        - "invoice"
-      summary: "Filter by CustomerId and Process YearMonth"
-      description: "Filter by Invoices for provided customerId and Process YearMonth."
-      consumes:
-        - "application/json"
-        - "application/xml"
-      produces:
-        - "application/xml"
-        - "application/json"
-      parameters:
-      - name: "customerId"
-        in: "query"
-        description: "Customer Id"
-        required: true
-        type: "string"
-      - name: "processYearMonth"
-        in: "query"
-        description: "Process YearMonth"
-        required: true
-        type: "string" 
-  /invoice/filterByCustomerIdAndProcessYear:
-    get:
-      tags:
-        - "invoice"
-      summary: "Filter by CustomerId and Process Year"
-      description: "Filter Invoices for provided customerId and Process Year."
-      consumes:
-        - "application/json"
-        - "application/xml"
-      produces:
-        - "application/xml"
-        - "application/json"
-      parameters:
-      - name: "customerId"
-        in: "query"
-        description: "Customer Id"
-        required: true
-        type: "string"
-      - name: "processYear"
-        in: "query"
-        description: "Process Year"
         required: true
         type: "string"                        
   /billing/all:

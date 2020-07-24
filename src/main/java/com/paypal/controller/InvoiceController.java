@@ -38,8 +38,8 @@ public class InvoiceController {
 		}
 	}
 	
-	@RequestMapping(value = "/filterByCustomerIdAndProcessDate", method = RequestMethod.GET, produces = "application/json")
-	public ResponseEntity<List<Invoice>> filterByCustomerIdAndProcessDate(@RequestParam(name="customerId", required=true) String customerId, @RequestParam(name="processDate", required=true) String processDate) {
+	@RequestMapping(value = "/filter", method = RequestMethod.GET, produces = "application/json")
+	public ResponseEntity<List<Invoice>> filter(@RequestParam(name="customerId", required=true) String customerId, @RequestParam(name="processDate", required=true) String processDate) {
 		logger.info("Get all Invoices");
 		List<Invoice> invoices = invoiceService.filterByCustomerIdAndProcessDate(customerId, processDate);
 		
