@@ -1,0 +1,75 @@
+swagger: "2.0"
+info:
+  description: "Paypal Rest API Service"
+  version: "1.0.0"
+  title: "API 1"
+  termsOfService: "http://swagger.io/terms/"
+  contact:
+    email: "sandeeprgurav@gmail.com"
+basePath: ""
+tags:
+  - name: "invoice"
+    description: "Invoice Information"
+  - name: "billing"
+    description: "Billing Information"
+  - name: "subscribe"
+    description: "Subscribe Information"    
+schemes:
+  - "https"
+  - "http"
+paths:
+  /invoice/all:
+    get:
+      tags:
+        - "invoice"
+      summary: "Invoice API"
+      description: "Invoice API"
+      consumes:
+        - "application/json"
+        - "application/xml"
+      produces:
+        - "application/xml"
+        - "application/json"
+      parameters:
+      - name: "processDate"
+        in: "query"
+        description: "Process Date"
+        required: true
+        type: "string"        
+  /billing/all:
+    get:
+      tags:
+        - "billing"
+      summary: "Billing API"
+      description: "Billing API"
+      consumes:
+        - "application/json"
+        - "application/xml"
+      produces:
+        - "application/xml"
+        - "application/json"
+      parameters:
+      - name: "processDate"
+        in: "query"
+        description: "Process Date"
+        required: true
+        type: "string"        
+  /subscribe/all:
+    get:
+      tags:
+        - "subscribe"
+      summary: "Subscribe API"
+      description: "Subscribe API"
+      consumes:
+        - "application/json"
+        - "application/xml"
+      produces:
+        - "application/xml"
+        - "application/json"
+      parameters:
+      - name: "processDate"
+        in: "query"
+        description: "Process Date"
+        required: true
+        type: "string"        
+        

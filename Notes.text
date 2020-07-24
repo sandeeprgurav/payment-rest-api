@@ -1,0 +1,23 @@
+Three Controllers: 
+Invoicing, 
+billing, 
+subscriptions
+
+Invoice:invoiceId, description, amount,tax,supplier, invoice_number, active_flag,created_by, created_date,modified_by, modified_date
+Billing:  billingId, paymentDate, paidDate,paidBy,remainingAmount, fee, active_flag,created_by, created_date,modified_by, modified_date   
+Customer : customerId, firstName, lastName, phone, address,active_flag,created_by, created_date,modified_by, modified_date
+subscriptions: customerId, InvoiceId, amount, orderDate 
+
+
+provide for all users 
+Provide particular userId  year, month, day, hours
+provide Invoices/Billing/Subscriptions created by userId 
+
+Steps:
+Connect to H2 database. --done
+Create table structure --done
+Have dummy data. --done
+Create DataSource --done
+Create controllers, service, Repository etc. --done
+Implement Swagger API using YAML.  --done
+Implement HATEOS
