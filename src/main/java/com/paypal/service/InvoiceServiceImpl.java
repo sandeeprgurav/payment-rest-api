@@ -24,5 +24,36 @@ public class InvoiceServiceImpl implements IInvoiceService {
 		}
 		return null;
 	}
+
+	@Override
+	public List<Invoice> filterByCustomerIdAndProcessYearMonth(String customerId, String processYearMonth) {
+		try {			
+			return invoiceRepository.filterByCustomerIdAndProcessYearMonth(customerId, processYearMonth);			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return null;
+	}
+
+	@Override
+	public List<Invoice> filterByCustomerIdAndProcessDate(String customerId, String processDate) {
+		try {			
+			return invoiceRepository.filterByCustomerIdAndProcessDate(customerId, DateUtils.getStringToDate(processDate));			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return null;
+	}
+
+	@Override
+	public List<Invoice> filterByCustomerIdAndProcessYear(String customerId, String processYear) {
+		try {			
+			return invoiceRepository.filterByCustomerIdAndYear(customerId, processYear);			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		return null;
+	}
 	 
 }

@@ -10,7 +10,7 @@ import javax.persistence.Table;
 
 @Table(name = "subscriptions")
 @Entity
-public class Subscribe extends BaseEntity {
+public class Subscribe {
 
 	@Id
 	@GeneratedValue

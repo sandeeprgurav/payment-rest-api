@@ -18,7 +18,7 @@ import com.paypal.service.ISubscribeService;
 
 @CrossOrigin
 @RestController
-@RequestMapping(value = "/subsribe")
+@RequestMapping(value = "/subscribe")
 public class SubscribeController {
 	private static final Logger logger = LoggerFactory.getLogger(SubscribeController.class);
 	

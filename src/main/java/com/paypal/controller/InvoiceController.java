@@ -37,6 +37,45 @@ public class InvoiceController {
 			return new ResponseEntity<List<Invoice>>(HttpStatus.NOT_FOUND);
 		}
 	}
+	
+	@RequestMapping(value = "/filterByCustomerIdAndProcessDate", method = RequestMethod.GET, produces = "application/json")
+	public ResponseEntity<List<Invoice>> filterByCustomerIdAndProcessDate(@RequestParam(name="customerId", required=true) String customerId, @RequestParam(name="processDate", required=true) String processDate) {
+		logger.info("Get all Invoices");
+		List<Invoice> invoices = invoiceService.filterByCustomerIdAndProcessDate(customerId, processDate);
+		
+		if(invoices != null) {
+			return new ResponseEntity<List<Invoice>>(invoices, HttpStatus.OK);
+		}else {
+			return new ResponseEntity<List<Invoice>>(HttpStatus.NOT_FOUND);
+		}
+	}
+	
+	@RequestMapping(value = "/filterByCustomerIdAndProcessYearMonth", method = RequestMethod.GET, produces = "application/json")
+	public ResponseEntity<List<Invoice>> filterByCustomerIdAndProcessYearMonth(@RequestParam(name="customerId", required=true) String customerId, @RequestParam(name="processYearMonth", required=true) String processYearMonth) {
+		logger.info("Get all Invoices");
+		List<Invoice> invoices = invoiceService.filterByCustomerIdAndProcessYearMonth(customerId, processYearMonth);
+		
+		if(invoices != null) {
+			return new ResponseEntity<List<Invoice>>(invoices, HttpStatus.OK);
+		}else {
+			return new ResponseEntity<List<Invoice>>(HttpStatus.NOT_FOUND);
+		}
+	}
+	
+	@RequestMapping(value = "/filterByCustomerIdAndProcessYear", method = RequestMethod.GET, produces = "application/json")
+	public ResponseEntity<List<Invoice>> filterByCustomerIdAndProcessYear(@RequestParam(name="customerId", required=true) String customerId, @RequestParam(name="processYear", required=true) String processYear) {
+		logger.info("Get all Invoices");
+		List<Invoice> invoices = invoiceService.filterByCustomerIdAndProcessYear(customerId, processYear);
+		
+		if(invoices != null) {
+			return new ResponseEntity<List<Invoice>>(invoices, HttpStatus.OK);
+		}else {
+			return new ResponseEntity<List<Invoice>>(HttpStatus.NOT_FOUND);
+		}
+	}
+	
+	
+	
 		
 }
 

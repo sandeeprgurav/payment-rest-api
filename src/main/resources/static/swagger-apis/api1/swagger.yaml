@@ -2,7 +2,7 @@ swagger: "2.0"
 info:
   description: "Paypal Rest API Service"
   version: "1.0.0"
-  title: "API 1"
+  title: "Paypal Rest API Service for payment transactions."
   termsOfService: "http://swagger.io/terms/"
   contact:
     email: "sandeeprgurav@gmail.com"
@@ -22,8 +22,8 @@ paths:
     get:
       tags:
         - "invoice"
-      summary: "Invoice API"
-      description: "Invoice API"
+      summary: "List Invoices by Process Date"
+      description: "Invoice API to find all invoices for provided process date."
       consumes:
         - "application/json"
         - "application/xml"
@@ -36,6 +36,75 @@ paths:
         description: "Process Date"
         required: true
         type: "string"        
+  /invoice/filterByCustomerIdAndProcessDate:
+    get:
+      tags:
+        - "invoice"
+      summary: "Filter by CustomerId and Process Date "
+      description: "Filter by Invoices for provided customerId and Process Date."
+      consumes:
+        - "application/json"
+        - "application/xml"
+      produces:
+        - "application/xml"
+        - "application/json"
+      parameters:
+      - name: "customerId"
+        in: "query"
+        description: "Customer Id"
+        required: true
+        type: "string"
+      - name: "processDate"
+        in: "query"
+        description: "Process Date"
+        required: true
+        type: "string" 
+  /invoice/filterByCustomerIdAndProcessYearMonth:
+    get:
+      tags:
+        - "invoice"
+      summary: "Filter by CustomerId and Process YearMonth"
+      description: "Filter by Invoices for provided customerId and Process YearMonth."
+      consumes:
+        - "application/json"
+        - "application/xml"
+      produces:
+        - "application/xml"
+        - "application/json"
+      parameters:
+      - name: "customerId"
+        in: "query"
+        description: "Customer Id"
+        required: true
+        type: "string"
+      - name: "processYearMonth"
+        in: "query"
+        description: "Process YearMonth"
+        required: true
+        type: "string" 
+  /invoice/filterByCustomerIdAndProcessYear:
+    get:
+      tags:
+        - "invoice"
+      summary: "Filter by CustomerId and Process Year"
+      description: "Filter Invoices for provided customerId and Process Year."
+      consumes:
+        - "application/json"
+        - "application/xml"
+      produces:
+        - "application/xml"
+        - "application/json"
+      parameters:
+      - name: "customerId"
+        in: "query"
+        description: "Customer Id"
+        required: true
+        type: "string"
+      - name: "processYear"
+        in: "query"
+        description: "Process Year"
+        required: true
+        type: "string"                        
   /billing/all:
     get:
       tags:
