@@ -9,11 +9,11 @@ info:
 basePath: ""
 tags:
   - name: "invoice"
-    description: "Invoice Information"
+    description: "API for Invoice Information"
   - name: "billing"
-    description: "Billing Information"
+    description: "API for Billing Information"
   - name: "subscribe"
-    description: "Subscribe Information"    
+    description: "API for Pricing Information"    
 schemes:
   - "https"
   - "http"
@@ -123,12 +123,12 @@ paths:
         description: "Process Date"
         required: true
         type: "string"        
-  /subscribe/all:
+  /subscribe/pricing:
     get:
       tags:
         - "subscribe"
-      summary: "Subscribe API"
-      description: "Subscribe API"
+      summary: "Find Pricing for a Customer Transactions"
+      description: "Find Pricing for a Customer Transactions"
       consumes:
         - "application/json"
         - "application/xml"
@@ -136,9 +136,9 @@ paths:
         - "application/xml"
         - "application/json"
       parameters:
-      - name: "processDate"
+      - name: "customerId"
         in: "query"
-        description: "Process Date"
+        description: "Customer Id"
         required: true
         type: "string"        
         

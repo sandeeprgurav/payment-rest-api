@@ -7,5 +7,7 @@ import com.paypal.entity.Subscribe;
 public interface ISubscribeService {
 
 	List<Subscribe> findSubscribes(String  processDate);
+
+	Double pricing(String customerId);
 	
 }
